@@ -1,0 +1,31 @@
+:root {
+    --main-background: hsl(230, 100%, 99%);
+    --card-background: hsl(0, 0%, 100%);
+    --full-slider-bar: hsl(174, 77%, 80%);
+    --slider-background: hsl(174, 86%, 45%);
+    --empty-slider-bar: hsl(224, 65%, 95%);
+    --toggle-background: hsl(223, 50%, 87%);
+    --discount-background: hsl(14, 92%, 95%);
+    --discount-text: hsl(15, 100%, 70%);
+    --CTA-text: hsl(226, 100%, 87%);
+    --CTA-background: hsl(227, 35%, 25%);
+    --text: hsl(225, 20%, 60%);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin: 60px;
+}
+
+.attribution {
+    color: var(--text);
+    text-align: center;
+    margin: 15px;
+    font-size: 14px;
+}
+
+.attribution > a {
+    color: var(--CTA-background);
+    margin-left: 10px;
+}
