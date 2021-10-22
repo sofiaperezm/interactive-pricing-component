@@ -12,6 +12,32 @@
     --text: hsl(225, 20%, 60%);
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope";
+}
+
+.container {
+    background-color: var(--main-background);
+}
+
+.card {
+    background-color: var(--card-background);
+}
+
+/* #pricing {
+    display: none;
+} */
+
+#prices-range {
+    display: none;
+}
+
 footer {
     display: flex;
     flex-direction: column;

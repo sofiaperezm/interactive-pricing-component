@@ -2,30 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  <section>
+  <section class="container">
   <h2>Simple, traffic-based pricing</h2>
   <p>Sign-up for our 30-day trial. No credit card required.</p>
     
-  <article>
-    <h3>100K PAGEVIEWS</h3>
-    <input type="range">
-    <p>$16.00</p><span>/month</span>
-    <p>Monthly Billing</p>
-    <input type="checkbox">
-    <p>Yearly Billing</p>
+  <article class="card">
+    <h3 class="pageviews-count"></h3>
+    <input id="pageviews-input" type="range" min="1" max="1000000" list="prices-range">
+    <datalist id="prices-range">
+      <option value="0">
+      <option value="10000">
+      <option value="50000">
+      <option value="100000">
+      <option value="500000">
+      <option value="1000000">
+    </datalist>
+    <p class="price"></p>
+    <span>Monthly Billing</span>
+    <input id="billing-toggle" type="checkbox">
+    <span>Yearly Billing</span>
     <span>-25%</span>
     <div>
       <img src="images/icon-check.svg" alt="check-list icon">
@@ -42,5 +47,6 @@
     <div class="attribution">Challenge by<a href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt">Frontend Mentor</a></div>
     <div class="attribution">Coded by<a href="https://www.linkedin.com/in/sofiaperezmantilla/">Sofia Perez Mantilla</a></div>
 </footer>
+<script type="module" src="app.js"></script>
 </body>
 </html>
