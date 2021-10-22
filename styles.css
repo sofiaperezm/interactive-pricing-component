@@ -30,12 +30,8 @@ body {
     background-color: var(--card-background);
 }
 
-/* #pricing {
-    display: none;
-} */
-
-#prices-range {
-    display: none;
+#pageviews-input {
+    width: 90%;
 }
 
 footer {
