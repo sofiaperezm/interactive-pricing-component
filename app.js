@@ -10,26 +10,38 @@ pageViewsInput.addEventListener("input", handlePageViewsCount);
 billingToggle.addEventListener("change", calculatePrice);
 
 function getPageViews(pageViewsCount) {
-    if (pageViewsCount <= 10000) {
+    const pageViewsNumber = parseInt(pageViewsCount, 10)
+    if (pageViewsNumber >= 0 && pageViewsNumber < 50001) {
         return "10K";
     }
-    if (pageViewsCount > 10000 && pageViewsCount <= 50000) {
+    if (pageViewsNumber >= 50001 && pageViewsNumber < 100001) {
         return "50K";
     }
-    if (pageViewsCount > 50000 && pageViewsCount <= 100000) {
+    if (pageViewsNumber >= 100001 && pageViewsNumber < 500001) {
         return "100K";
     }
-    if (pageViewsCount > 100000 && pageViewsCount <= 500000) {
+    if (pageViewsNumber >= 500001 && pageViewsNumber < 1000000) {
         return "500K";
     }
-    if (pageViewsCount > 500000 && pageViewsCount <= 1000000) {
+    console.log(pageViewsNumber == 1000000)
+    if (pageViewsNumber === 1000000) {
         return "1M";
     }
 }
 
 function handlePageViewsCount() {
     const pageViewsCount = pageViewsInput.value;
-    const pageViewsOutput = getPageViews(pageViewsCount);
+    let pageViewsOutput = "100K"
+
+    if (pageViewsCount < 100000) {
+        pageViewsOutput = `${pageViewsCount.slice(0, 2)}K`
+    }
+    if (pageViewsCount >= 100000 && pageViewsCount < 1000000) {
+        pageViewsOutput = `${pageViewsCount.slice(0, 3)}K`
+    }
+    if (pageViewsCount >= 1000000) {
+        pageViewsOutput = `${pageViewsCount.slice(0, 1)}M`
+    }
 
     pageViews.innerHTML = `${pageViewsOutput} PAGEVIEWS`;
 
@@ -42,6 +54,8 @@ function calculatePrice() {
     const pageViewsOutput = getPageViews(pageViewsCount);
     const pricing = priceRanges[pageViewsOutput];
     
+    console.log(pageViewsCount, pageViewsOutput)
+
     if (billingToggleChecked) {
         const yearlyPrice = pricing * 12;
         const yearlyPlan = yearlyPrice - yearlyPrice * YEARLY_DISCOUNT;
