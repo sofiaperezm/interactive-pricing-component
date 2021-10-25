@@ -63,11 +63,10 @@ function calculatePrice() {
     const pricing = priceRanges[pageViewsOutput];
     
     if (billingToggleChecked) {
-        const yearlyPrice = pricing * 12;
-        const yearlyPlan = yearlyPrice - yearlyPrice * YEARLY_DISCOUNT;
-        priceOutput.innerHTML = `$${yearlyPlan}/year`;
+        const yearlyPlan = pricing - pricing * YEARLY_DISCOUNT;
+        priceOutput.innerHTML = `$${yearlyPlan.toFixed(2)}`;
     } else {
-        priceOutput.innerHTML = `$${pricing}/month`;
+        priceOutput.innerHTML = `$${pricing.toFixed(2)}`;
     }
 };
 

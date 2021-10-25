@@ -11,20 +11,32 @@
   <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Interactive pricing component</title>
 </head>
-<body>
+<body> 
   <section class="container">
-  <h2>Simple, traffic-based pricing</h2>
-  <p>Sign-up for our 30-day trial. No credit card required.</p>
-    
+    <div class="heading">
+      <div class="heading_text">
+        <h2 class="text text-bold">Simple, traffic-based pricing</h2>
+        <p class="text">Sign-up for our 30-day trial.</p>
+        <p class="text">No credit card required.</p>
+      </div>
+    </div>
   <article class="card">
     <h3 class="pageviews-count"></h3>
     <input id="pageviews-input" type="range" min="0" max="1000000" value="100000">
-    <p class="price"></p>
-    <span>Monthly Billing</span>
-    <input id="billing-toggle" type="checkbox">
-    <span>Yearly Billing</span>
-    <span>-25%</span>
-    <div>
+    <div class="pricing">
+      <span class="price"></span>
+      <span class="monthly-price">/month</span>
+    </div>
+    <div class="price-plan">
+      <span class="option-plan">Monthly Billing</span>
+      <label class="switch">
+        <input id="billing-toggle" type="checkbox">
+        <span class="toggle-thumb"></span>
+      </label>
+      <span class="option-plan">Yearly Billing</span>
+      <small class="discount">-25%</small>
+    </div> 
+    <div class="benefits">
       <img src="images/icon-check.svg" alt="check-list icon">
       <p>Unlimited websites</p>
       <img src="images/icon-check.svg" alt="check-list icon">
