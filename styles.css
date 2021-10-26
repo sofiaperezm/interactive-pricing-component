@@ -22,6 +22,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Manrope";
+    background-color: var(--main-background);
 }
 
 .heading {
@@ -49,10 +50,6 @@ body {
     font-size: 18px;
     margin-bottom: 12px;
     padding-top: 30px;
-}
-
-.container {
-    background-color: var(--main-background);
 }
 
 .card {
@@ -83,16 +80,16 @@ body {
 
 #pageviews-input::-webkit-slider-thumb { 
     -webkit-appearance: none;
-    height: 30px;
-    width: 30px;
+    height: 12px;
+    width: 12px;
     border: 0;
-    border-radius: 36px; 
+    border-radius: 30%; 
     cursor: ew-resize;
     background-color: var(--slider-background);
-    background-image: url("images/icon-slider.svg");
-    background-position: center;
-    background-repeat: no-repeat;
     box-shadow: -260px 0 0 260px var(--full-slider-bar);
+    /* background-image: url("images/icon-slider.svg");
+    background-position: center;
+    background-repeat: no-repeat; */
 }
 
 #pageviews-input::-moz-range-thumb {
@@ -136,19 +133,21 @@ body {
 
 .price-plan {
     margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 6px;
 }
 
 .option-plan {
     color: var(--text);
-    font-size: 12px;
+    font-size: 10px;
     white-space: nowrap;
 }
 
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 40px;
+    height: 20px;
 }
 
 .toggle-thumb {
@@ -167,8 +166,8 @@ body {
 .toggle-thumb:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 12px;
+    width: 12px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -194,15 +193,54 @@ body {
 }
 
 #billing-toggle:checked + .toggle-thumb:before {
-    transform: translateX(26px);
+    transform: translateX(20px);
     color: var(--full-slider-bar);
     border-radius: 50%;
 }
 
 .discount {
+    font-size: 8px;
     color: var(--discount-text);
     background-color: var(--discount-background);
     border-radius: 10px;
+    padding: 1px 6px 2px;
+}
+
+.horizontal-line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--empty-slider-bar);
+    margin: 1em 0;
+    padding: 0;
+}
+
+.benefits-list {
+    list-style-image: url("images/icon-check.svg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px 20px -20px;
+}
+
+.benefit {
+    font-size: 10px;
+    padding-bottom: 5px;
+}
+
+.CTA-trial {
+    background-color: var(--CTA-background);
+    color: var(--text);
+    padding: 10px 30px;
+    font-family: "Manrope";
+    font-size: 10px;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.CTA-trial:hover {
+    color: var(--card-background);
 }
 
 footer {
@@ -214,11 +252,34 @@ footer {
 .attribution {
     color: var(--text);
     text-align: center;
-    margin: 15px;
-    font-size: 14px;
+    margin: 12px;
+    font-size: 10px;
 }
 
 .attribution > a {
-    color: var(--CTA-background);
+    color: var(--slider-background);
     margin-left: 10px;
+}
+
+@media (min-width: 820px) {
+    .heading_text {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .text {
+        font-size: 20px;
+        display: inline-block;
+        width: max-content;
+    }
+    
+    .text-bold {
+        font-size: 32px;
+    }
+
+    .card {
+        max-width: 45%;
+        min-height: 600px;
+    }
 }
