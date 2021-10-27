@@ -12,20 +12,23 @@
   <title>Frontend Mentor | Interactive pricing component</title>
 </head>
 <body> 
-  <section class="container">
+  <main class="container">
     <div class="heading">
       <div class="heading_text">
         <h2 class="text text-bold">Simple, traffic-based pricing</h2>
-        <p class="text">Sign-up for our 30-day trial.</p>
-        <p class="text">No credit card required.</p>
+        <div class="text-container">
+          <p class="text">Sign-up for our 30-day trial. No credit card required.</p>
+        </div>
       </div>
     </div>
-  <article class="card">
-    <h3 class="pageviews-count"></h3>
-    <input id="pageviews-input" type="range" min="0" max="1000000" value="500000">
-    <div class="pricing">
-      <span class="price"></span>
-      <span class="monthly-price">/month</span>
+  <article class="card">   
+    <div class="card-header">
+      <h3 class="pageviews-count"></h3>
+      <input id="pageviews-input" type="range" min="0" max="1000000" value="100000">
+      <div class="pricing">
+        <output class="price" for="pageviews-input"></output>
+        <span class="monthly-price">/month</span>
+      </div>
     </div>
     <div class="price-plan">
       <span class="option-plan">Monthly Billing</span>
@@ -34,17 +37,22 @@
         <span class="toggle-thumb"></span>
       </label>
       <span class="option-plan">Yearly Billing</span>
-      <span class="discount">-25%</span>
+      <span class="discount discount-mobile">-25%</span>
+      <span class="discount discount-desktop">25% discount</span>
     </div> 
     <hr class="horizontal-line">
-    <ul class="benefits-list">
-      <li class="text benefit">Unlimited websites</li>
-      <li class="text benefit">100% data ownership</li>
-      <li class="text benefit">Email reports</li>
-    </ul>
-    <button class="CTA-trial" type="button">Start my trial</button>
+    <div class="card-footer">
+      <ul class="benefits-list">
+        <li class="text benefit">Unlimited websites</li>
+        <li class="text benefit">100% data ownership</li>
+        <li class="text benefit">Email reports</li>
+      </ul>
+      <div>
+        <button class="CTA-trial" type="button">Start my trial</button>
+      </div>
+    </div>
   </article>
-  </section>
+</main>
   <footer>
     <div class="attribution">Challenge by<a href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt">Frontend Mentor</a></div>
     <div class="attribution">Coded by<a href="https://www.linkedin.com/in/sofiaperezmantilla/">Sofia Perez Mantilla</a></div>

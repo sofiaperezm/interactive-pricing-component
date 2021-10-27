@@ -9,21 +9,22 @@ const YEARLY_DISCOUNT = 0.25;
 pageViewsInput.addEventListener("input", handlePageViewsCount);
 billingToggle.addEventListener("change", calculatePrice);
 
+
 function getPageViews(pageViewsCount) {
     const pageViewsNumber = parseInt(pageViewsCount, 10)
-    if (pageViewsNumber >= 0 && pageViewsNumber < 10001) {
+    if (pageViewsNumber >= 0 && pageViewsNumber < 10000) {
         return "0";
     }
-    if (pageViewsNumber >= 10001 && pageViewsNumber < 50001) {
+    if (pageViewsNumber >= 10000 && pageViewsNumber < 50000) {
         return "10K";
     }
-    if (pageViewsNumber >= 50001 && pageViewsNumber < 100001) {
+    if (pageViewsNumber >= 50000 && pageViewsNumber < 100000) {
         return "50K";
     }
-    if (pageViewsNumber >= 100001 && pageViewsNumber < 500001) {
+    if (pageViewsNumber >= 100000 && pageViewsNumber < 500000) {
         return "100K";
     }
-    if (pageViewsNumber >= 500001 && pageViewsNumber < 1000000) {
+    if (pageViewsNumber >= 500000 && pageViewsNumber < 1000000) {
         return "500K";
     }
     if (pageViewsNumber === 1000000) {
