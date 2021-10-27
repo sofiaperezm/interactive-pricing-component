@@ -28,9 +28,11 @@ Users should be able to:
 ### Screenshot
 
 Desktop viewport
+
 ![Desktop screenshot](images/desktop-screenshot.png)
 
 Mobile viewport
+
 ![Mobile screenshot](images/mobile-screenshot.png)
 
 ### Links
